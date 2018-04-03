@@ -1,3 +1,7 @@
 <div>
 	home page
+	<ui-loader [name]="loaderName"></ui-loader>
 </div>
+<button (click)="showLoader(true)">Show </button>
+<button (click)="showLoader(false)">hide </button>
+<button (click)="unregister()">unresister</button>
