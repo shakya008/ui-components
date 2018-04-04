@@ -9,18 +9,18 @@ import { LoaderModule, LoaderService } from '../../components/loader';
 
 
 @NgModule({
-  imports: [
+    imports: [
     FormsModule,
     RouterModule,
     BrowserAnimationsModule,
     LoaderModule
-  ],
-  declarations: [
+    ],
+    declarations: [
     HomeComponent
-  ],
-  exports: [
+    ],
+    exports: [
     HomeComponent
-  ],
-  providers: [LoaderService]
+    ],
+    providers: [LoaderService]
 })
 export class HomeModule { }

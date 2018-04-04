@@ -9,17 +9,6 @@ import { DEFAULT_NAME } from './constant';
 @Injectable()
 export class LoaderService {
     private _obs$: any = {};
-
-    /**
-    * This function registers the loader component instance.
-    * @param {string} name - string identifier to register
-    * @default
-    */
-    public register(name: string = DEFAULT_NAME) {
-        if (!this._obs$[name]) {
-            this._obs$[name] = [];
-        }
-    }
     /**
     * This function unregister the registration made for loader
     * @param {string} name -  String identifier on which loader registered
@@ -50,6 +39,7 @@ export class LoaderService {
     */
     public notify(name: string= DEFAULT_NAME) : Observable<any> {
         return Observable.create((obs) => {
+            this._obs$[name] = this._obs$[name] || [];
             this._obs$[name].push(obs);
         });
     }
